@@ -17,11 +17,13 @@ const colorGray700 = Color(0xFF666666);
 const colorGray800 = Color(0xFF424242);
 const colorGray900 = Color(0xFF222222);
 
-/// Main Colors for Tennis Reminder App
-const colorMain900 = Color(0xFF18634e); // 짙은 테니스 그린 (신뢰감, 타이틀용)
-const colorMain800 = Color(0xFF00B386); // 밝은 포인트 그린 (버튼, 강조)
-const colorMain700 = Color(0xFFFFD447); // 햇살 옐로우 (강조, 테니스공 연상)
-const colorMain600 = Color(0xFFF6FFF9); // 아주 밝은 민트화이트 (배경용)
+/// Main Mauve Color Palette
+const colorMain900 = Color(0xFF4C2A3C); // Deep Mauve (타이틀용)
+const colorMain800 = Color(0xFF663456); // Bold Mauve (포인트)
+const colorMain700 = Color(0xFF854A71); // Accent Mauve (버튼)
+const colorMain600 = Color(0xFFA9648B); // Medium Mauve (기본 강조)
+const colorMain500 = Color(0xFFC986AC); // Soft Mauve (배경 대비)
+const colorMain400 = Color(0xFFD8A7C4); // Very Light Mauve (배경용)
 
 /// Web Color
 const colorBlue50 = Color(0xFFF6F8FB);
