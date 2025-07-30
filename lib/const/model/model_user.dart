@@ -11,6 +11,13 @@ class ModelUser {
   final LoginType loginType;
   final UserType userType;
   final String? nickname;
+  final String? imageUrl;
+  final String? gender;
+  final String? country;
+  final String? location;
+  final int? age;
+  final String? mbti;
+  final int? mannerScore;
 
   const ModelUser({
     required this.uid,
@@ -20,6 +27,13 @@ class ModelUser {
     required this.loginType,
     this.userType = UserType.user,
     this.nickname,
+    this.imageUrl,
+    this.gender,
+    this.country,
+    this.location,
+    this.age,
+    this.mbti,
+    this.mannerScore,
   });
 
   factory ModelUser.fromJson(Map<String, dynamic> json) {
@@ -32,7 +46,14 @@ class ModelUser {
       pw: json[keyPassword] as String?,
       loginType: LoginType.values.firstWhere((e) => e.name == json[keyLoginType]),
       userType: UserType.values.firstWhere((e) => e.name == json[keyUserType]),
-      nickname: json['nickname'] as String?,
+      nickname: json[keyNickName] as String?,
+      imageUrl: json[keyImageUrl] as String?,
+      gender: json[keyGender] as String?,
+      country: json[keyCountry] as String?,
+      location: json[keyLocation] as String?,
+      age: json[keyAge] as int?,
+      mbti: json[keyMbti] as String?,
+      mannerScore: json[keyMannerScore] as int?,
     );
   }
 
@@ -45,6 +66,13 @@ class ModelUser {
       keyLoginType: loginType.name,
       keyUserType: userType.name,
       keyNickName: nickname,
+      keyImageUrl: imageUrl,
+      keyGender: gender,
+      keyCountry: country,
+      keyLocation: location,
+      keyAge: age,
+      keyMbti: mbti,
+      keyMannerScore: mannerScore,
     };
   }
 
@@ -56,6 +84,13 @@ class ModelUser {
     LoginType? loginType,
     UserType? userType,
     String? nickname,
+    String? imageUrl,
+    String? gender,
+    String? country,
+    String? location,
+    int? age,
+    String? mbti,
+    int? mannerScore,
   }) {
     return ModelUser(
       uid: uid ?? this.uid,
@@ -65,6 +100,13 @@ class ModelUser {
       loginType: loginType ?? this.loginType,
       userType: userType ?? this.userType,
       nickname: nickname ?? this.nickname,
+      imageUrl: imageUrl ?? this.imageUrl,
+      gender: gender ?? this.gender,
+      country: country ?? this.country,
+      location: location ?? this.location,
+      age: age ?? this.age,
+      mbti: mbti ?? this.mbti,
+      mannerScore: mannerScore ?? this.mannerScore,
     );
   }
 }
