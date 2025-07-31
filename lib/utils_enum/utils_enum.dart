@@ -29,10 +29,10 @@ class UtilsEnum {
   }
 
   /// 국가 전체 드롭다운 아이템
-  static List<DropdownMenuItem<String>> buildCountryDropdownItems() {
+  static List<DropdownMenuItem<Country>> buildCountryDropdownItems() {
     return Country.values.map((c) {
-      return DropdownMenuItem<String>(
-        value: c.name,
+      return DropdownMenuItem<Country>(
+        value: c,
         child: Text(getCountryLabel(c)),
       );
     }).toList();
