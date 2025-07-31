@@ -13,7 +13,7 @@ class ModelUser {
   final String? nickname;
   final String? imageUrl;
   final String? gender;
-  final String? country;
+  final Country? country;
   final String? location;
   final int? age;
   final String? mbti;
@@ -49,7 +49,7 @@ class ModelUser {
       nickname: json[keyNickName] as String?,
       imageUrl: json[keyImageUrl] as String?,
       gender: json[keyGender] as String?,
-      country: json[keyCountry] as String?,
+      country: json[keyCountry] != null ? Country.values.firstWhere((e) => e.name == json[keyCountry]) : null,
       location: json[keyLocation] as String?,
       age: json[keyAge] as int?,
       mbti: json[keyMbti] as String?,
@@ -68,7 +68,7 @@ class ModelUser {
       keyNickName: nickname,
       keyImageUrl: imageUrl,
       keyGender: gender,
-      keyCountry: country,
+      keyCountry: country?.name,
       keyLocation: location,
       keyAge: age,
       keyMbti: mbti,
@@ -86,7 +86,7 @@ class ModelUser {
     String? nickname,
     String? imageUrl,
     String? gender,
-    String? country,
+    Country? country,
     String? location,
     int? age,
     String? mbti,
