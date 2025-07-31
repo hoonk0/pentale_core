@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../const/value/enum.dart';
@@ -241,3 +240,6 @@ const Map<Country, String> _countryLabels = {
   Country.ZW: 'Zimbabwe',
 };
 
+extension CountryDisplayName on Country {
+  String get displayName => _countryLabels[this] ?? name;
+}
