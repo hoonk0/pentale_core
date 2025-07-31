@@ -1,154 +1,10 @@
 
+import 'package:flutter/material.dart';
+
 import '../const/value/enum.dart';
 
 class UtilsEnum {
- /* /// Subject 한글 받아오기
-  static String getNameFromSubject(Subject subject) {
-    switch (subject) {
-      case Subject.sports_education:
-        return '스포츠 교육학';
-      case Subject.sports_sociology:
-        return '스포츠 사회학';
-      case Subject.sports_psychology:
-        return '스포츠 심리학';
-      case Subject.sports_ethics:
-        return '스포츠 윤리';
-      case Subject.exercise_physiology:
-        return '운동생리학';
-      case Subject.kinematics:
-        return '운동역학';
-      case Subject.korean_sports_history:
-        return '한국체육학';
-    }
-  }
-/// 과목 영어로 받아오기
-  static Subject getSubjectFromName(String name) {
-    switch (name.trim()) {
-      case '스포츠 교육학':
-        return Subject.sports_education;
-      case '스포츠 사회학':
-        return Subject.sports_sociology;
-      case '스포츠 심리학':
-        return Subject.sports_psychology;
-      case '스포츠 윤리':
-        return Subject.sports_ethics;
-      case '운동생리학':
-        return Subject.exercise_physiology;
-      case '운동역학':
-        return Subject.kinematics;
-      case '한국체육학':
-        return Subject.korean_sports_history;
-      default:
-        throw Exception('Unknown subject name: $name');
-    }
-  }
 
-  /// Article 한글 받아오기
-  static String getNameFromArticleType(ArticleType articleType) {
-    switch (articleType) {
-      case ArticleType.all:
-        return '카테고리 전체';
-      case ArticleType.main:
-        return '좋은몸언론사';
-      case ArticleType.health:
-        return '건강';
-      case ArticleType.medical:
-        return '의학';
-      case ArticleType.sports:
-        return '스포츠';
-      case ArticleType.issue:
-        return '일산,연예,이슈';
-      case ArticleType.etc:
-        return '기사모음';
-    }
-  }
-
-  /// Article 한글 받아오기
-  static ArticleType getArticleTypeFromName(String articleType) {
-    switch (articleType) {
-      case '좋은몸언론사':
-        return ArticleType.main;
-      case '건강':
-        return ArticleType.health;
-      case '의학':
-        return ArticleType.medical;
-      case '스포츠':
-        return ArticleType.sports;
-      case '일산,연예,이슈':
-        return ArticleType.issue;
-      case '기사모음':
-        return ArticleType.etc;
-      default:
-        return ArticleType.etc;
-    }
-  }
-
-  /// SortOption 한글 받아오기
-  static String getSortOptionText(SortOption option) {
-    switch (option) {
-      case SortOption.newest:
-        return '최신순';
-      case SortOption.oldest:
-        return '오래된순';
-    }
-  }
-
-  /// TestYear 한글 받아오기
-  static String getYearText(TestYear year) {
-    return year.name.substring(1) + '년'; // 'y2024' -> '2024년'
-  }
-
-  /// TestYear 오름차순 정렬
-  static List<String> getSortedTestYears() {
-    return TestYear.values.reversed.map((e) => getYearText(e)).toList();
-  }
-
-  /// 심리 테스트 카테고리 한글 받아오기
-  static String getNameFromPsychologyCategory(PsychologyCategory category) {
-    switch (category) {
-      case PsychologyCategory.study_stress:
-        return '학업 스트레스';
-      case PsychologyCategory.work_stress:
-        return '직무 스트레스';
-      case PsychologyCategory.etc_stress:
-        return '기타 스트레스';
-    }
-  }
-
-  /// 건강 테스트 카테고리 한글 받아오기
-  static String getNameFromHealthCategory(HealthCategory category) {
-    switch (category) {
-      case HealthCategory.eating_habit:
-        return '식습관';
-      case HealthCategory.joint:
-        return '관절';
-      case HealthCategory.etc_health:
-        return '건강 기타';
-    }
-  }
-  /// FieldSub enum → 한글명 반환
-  static String getNameFromFieldSub(FieldSub fieldSub) {
-    switch (fieldSub) {
-      case FieldSub.upper_body:
-        return '상체';
-      case FieldSub.lower_body:
-        return '하체';
-    }
-  }
-
-  /// FieldSubDetail enum → 한글명 반환
-  static String getNameFromFieldSubDetail(FieldSubDetail detail) {
-    switch (detail) {
-      case FieldSubDetail.chest_arm:
-        return '가슴·팔';
-      case FieldSubDetail.back_shoulder:
-        return '등·어깨';
-      case FieldSubDetail.abs_full:
-        return '복근·전신';
-    }
-  }
-
-*/
 ///로그인 타입
   static String getLoginTypeName(LoginType loginType) {
     switch (loginType) {
@@ -165,151 +21,223 @@ class UtilsEnum {
     }
   }
 
-  /// 서울 자치구 → 한글명 반환
-  static String getNameFromSeoulDistrict(SeoulDistrict district) {
-    switch (district) {
-/*      case SeoulDistrict.all:
-        return '전체';*/
-      case SeoulDistrict.gangnam:
-        return '강남구';
-      case SeoulDistrict.gangdong:
-        return '강동구';
-      case SeoulDistrict.gangbuk:
-        return '강북구';
-      case SeoulDistrict.gangseo:
-        return '강서구';
-      case SeoulDistrict.gwanak:
-        return '관악구';
-      case SeoulDistrict.gwangjin:
-        return '광진구';
-      case SeoulDistrict.guro:
-        return '구로구';
-      case SeoulDistrict.geumcheon:
-        return '금천구';
-      case SeoulDistrict.nowon:
-        return '노원구';
-      case SeoulDistrict.dobong:
-        return '도봉구';
-      case SeoulDistrict.dongdaemun:
-        return '동대문구';
-      case SeoulDistrict.dongjak:
-        return '동작구';
-      case SeoulDistrict.mapo:
-        return '마포구';
-      case SeoulDistrict.seodaemun:
-        return '서대문구';
-      case SeoulDistrict.seocho:
-        return '서초구';
-      case SeoulDistrict.seongdong:
-        return '성동구';
-      case SeoulDistrict.seongbuk:
-        return '성북구';
-      case SeoulDistrict.songpa:
-        return '송파구';
-      case SeoulDistrict.yangcheon:
-        return '양천구';
-      case SeoulDistrict.yeongdeungpo:
-        return '영등포구';
-      case SeoulDistrict.yongsan:
-        return '용산구';
-      case SeoulDistrict.eunpyeong:
-        return '은평구';
-      case SeoulDistrict.jongno:
-        return '종로구';
-      case SeoulDistrict.jung:
-        return '중구';
-      case SeoulDistrict.jungnang:
-        return '중랑구';
-
-    }
+  /// 국가 라벨
+  static String getCountryLabel(CountryIso2 country, {String locale = 'en'}) {
+    final label = _countryLabels[country];
+    if (label != null) return label;
+    return country.name;
   }
 
-  /// 요일 enum → 한글명 반환
-  static String getNameFromWeekday(Weekday weekday) {
-    switch (weekday) {
-      case Weekday.monday:
-        return '월요일';
-      case Weekday.tuesday:
-        return '화요일';
-      case Weekday.wednesday:
-        return '수요일';
-      case Weekday.thursday:
-        return '목요일';
-      case Weekday.friday:
-        return '금요일';
-      case Weekday.saturday:
-        return '토요일';
-      case Weekday.sunday:
-        return '일요일';
-    }
+  /// 국가 전체 드롭다운 아이템
+  static List<DropdownMenuItem<String>> buildCountryDropdownItems() {
+    return CountryIso2.values.map((c) {
+      return DropdownMenuItem<String>(
+        value: c.name,
+        child: Text(getCountryLabel(c)),
+      );
+    }).toList();
   }
-
-  /// TradeState enum → 한글명 반환
-  static String getNameFromTradeState(TradeState state) {
-    switch (state) {
-      case TradeState.exchangeOngoing:
-        return '교환';
-      case TradeState.transferOngoing:
-        return '양도';
-      case TradeState.done:
-        return '완료';
-
-    }
-  }
-
-
-  /// Firestore 문자열 값을 받아 TradeState → 한글명 반환
-  static String getNameFromTradeStateRaw(dynamic raw) {
-    final name = (raw ?? '').toString().trim();
-    final state = TradeState.values.firstWhere(
-      (e) => e.name == name,
-      orElse: () => TradeState.transferOngoing, // 기본값 지정
-    );
-    return getNameFromTradeState(state);
-  }
-
-  /// Firestore 문자열 값을 받아 TradeState enum 반환
-  static TradeState getTradeStateFromRaw(dynamic raw) {
-    final name = (raw ?? '').toString().trim();
-    return TradeState.values.firstWhere(
-      (e) => e.name == name,
-      orElse: () => TradeState.transferOngoing, // 기본값 지정
-    );
-  }
-
-  /// RacketBrand enum → 한글명 반환
-  static String getNameFromRacketBrand(RacketBrand brand) {
-    switch (brand) {
-      case RacketBrand.wilson:
-        return 'Wilson';
-      case RacketBrand.babolat:
-        return 'Babolat';
-      case RacketBrand.head:
-        return 'Head';
-      case RacketBrand.yonex:
-        return 'Yonex';
-      case RacketBrand.prince:
-        return 'Prince';
-      case RacketBrand.tecnifibre:
-        return 'Tecnifibre';
-      case RacketBrand.dunlop:
-        return 'Dunlop';
-      case RacketBrand.volkl:
-        return 'Volkl';
-      case RacketBrand.prokennex:
-        return 'ProKennex';
-      case RacketBrand.slazenger:
-        return 'Slazenger';
-      case RacketBrand.solinco:
-        return 'Solinco';
-      case RacketBrand.pacific:
-        return 'Pacific';
-      case RacketBrand.artengo:
-        return 'Artengo';
-    }
-  }
-
-
-
 }
+
+const Map<CountryIso2, String> _countryLabels = {
+  CountryIso2.AF: 'Afghanistan (افغانستان)',
+  CountryIso2.AL: 'Albania (Shqipëria)',
+  CountryIso2.DZ: 'Algeria (الجزائر)',
+  CountryIso2.AS: 'American Samoa',
+  CountryIso2.AD: 'Andorra',
+  CountryIso2.AO: 'Angola',
+  CountryIso2.AG: 'Antigua and Barbuda',
+  CountryIso2.AR: 'Argentina',
+  CountryIso2.AM: 'Armenia (Հայաստան)',
+  CountryIso2.AU: 'Australia',
+  CountryIso2.AT: 'Austria (Österreich)',
+  CountryIso2.AZ: 'Azerbaijan (Azərbaycan)',
+  CountryIso2.BS: 'Bahamas',
+  CountryIso2.BH: 'Bahrain (البحرين)',
+  CountryIso2.BD: 'Bangladesh (বাংলাদেশ)',
+  CountryIso2.BB: 'Barbados',
+  CountryIso2.BY: 'Belarus (Беларусь)',
+  CountryIso2.BE: 'Belgium (België)',
+  CountryIso2.BZ: 'Belize',
+  CountryIso2.BJ: 'Benin (Bénin)',
+  CountryIso2.BM: 'Bermuda',
+  CountryIso2.BT: 'Bhutan (འབྲུག)',
+  CountryIso2.BO: 'Bolivia',
+  CountryIso2.BA: 'Bosnia and Herzegovina (Bosna i Hercegovina)',
+  CountryIso2.BW: 'Botswana',
+  CountryIso2.BR: 'Brazil (Brasil)',
+  CountryIso2.BN: 'Brunei Darussalam',
+  CountryIso2.BG: 'Bulgaria (България)',
+  CountryIso2.BF: 'Burkina Faso',
+  CountryIso2.BI: 'Burundi',
+  CountryIso2.KH: 'Cambodia (កម្ពុជា)',
+  CountryIso2.CM: 'Cameroon (Cameroun)',
+  CountryIso2.CA: 'Canada',
+  CountryIso2.CV: 'Cape Verde (Cabo Verde)',
+  CountryIso2.KY: 'Cayman Islands',
+  CountryIso2.CF: 'Central African Republic (République centrafricaine)',
+  CountryIso2.TD: 'Chad (Tchad)',
+  CountryIso2.CL: 'Chile',
+  CountryIso2.CN: 'China (中国)',
+  CountryIso2.CO: 'Colombia',
+  CountryIso2.KM: 'Comoros (جزر القمر)',
+  CountryIso2.CG: 'Congo',
+  CountryIso2.CD: 'Congo, Democratic Republic of the',
+  CountryIso2.CR: 'Costa Rica',
+  CountryIso2.CI: 'Côte d\'Ivoire',
+  CountryIso2.HR: 'Croatia (Hrvatska)',
+  CountryIso2.CU: 'Cuba',
+  CountryIso2.CY: 'Cyprus (Κύπρος)',
+  CountryIso2.CZ: 'Czech Republic (Česká republika)',
+  CountryIso2.DK: 'Denmark (Danmark)',
+  CountryIso2.DJ: 'Djibouti (جيبوتي)',
+  CountryIso2.DM: 'Dominica',
+  CountryIso2.DO: 'Dominican Republic (República Dominicana)',
+  CountryIso2.EC: 'Ecuador',
+  CountryIso2.EG: 'Egypt (مصر)',
+  CountryIso2.SV: 'El Salvador',
+  CountryIso2.GQ: 'Equatorial Guinea (Guinea Ecuatorial)',
+  CountryIso2.ER: 'Eritrea (ኤርትራ)',
+  CountryIso2.EE: 'Estonia (Eesti)',
+  CountryIso2.SZ: 'Eswatini',
+  CountryIso2.ET: 'Ethiopia (ኢትዮጵያ)',
+  CountryIso2.FJ: 'Fiji',
+  CountryIso2.FI: 'Finland (Suomi)',
+  CountryIso2.FR: 'France',
+  CountryIso2.GA: 'Gabon',
+  CountryIso2.GM: 'Gambia',
+  CountryIso2.GE: 'Georgia (საქართველო)',
+  CountryIso2.DE: 'Germany (Deutschland)',
+  CountryIso2.GH: 'Ghana',
+  CountryIso2.GR: 'Greece (Ελλάδα)',
+  CountryIso2.GD: 'Grenada',
+  CountryIso2.GT: 'Guatemala',
+  CountryIso2.GN: 'Guinea (Guinée)',
+  CountryIso2.GW: 'Guinea-Bissau (Guiné-Bissau)',
+  CountryIso2.GY: 'Guyana',
+  CountryIso2.HT: 'Haiti (Haïti)',
+  CountryIso2.HN: 'Honduras',
+  CountryIso2.HU: 'Hungary (Magyarország)',
+  CountryIso2.IS: 'Iceland (Ísland)',
+  CountryIso2.IN: 'India (भारत)',
+  CountryIso2.ID: 'Indonesia (Indonesia)',
+  CountryIso2.IR: 'Iran (ایران)',
+  CountryIso2.IQ: 'Iraq (العراق)',
+  CountryIso2.IE: 'Ireland',
+  CountryIso2.IL: 'Israel (ישראל)',
+  CountryIso2.IT: 'Italy (Italia)',
+  CountryIso2.JM: 'Jamaica',
+  CountryIso2.JP: 'Japan (日本)',
+  CountryIso2.JO: 'Jordan (الأردن)',
+  CountryIso2.KZ: 'Kazakhstan (Қазақстан)',
+  CountryIso2.KE: 'Kenya',
+  CountryIso2.KI: 'Kiribati',
+  CountryIso2.KP: 'Korea (North) (조선민주주의인민공화국)',
+  CountryIso2.KR: 'Korea (South) (대한민국)',
+  CountryIso2.KW: 'Kuwait (الكويت)',
+  CountryIso2.KG: 'Kyrgyzstan (Кыргызстан)',
+  CountryIso2.LA: 'Laos (ລາວ)',
+  CountryIso2.LV: 'Latvia (Latvija)',
+  CountryIso2.LB: 'Lebanon (لبنان)',
+  CountryIso2.LS: 'Lesotho',
+  CountryIso2.LR: 'Liberia',
+  CountryIso2.LY: 'Libya (ليبيا)',
+  CountryIso2.LI: 'Liechtenstein',
+  CountryIso2.LT: 'Lithuania (Lietuva)',
+  CountryIso2.LU: 'Luxembourg (Luxembourg)',
+  CountryIso2.MG: 'Madagascar (Madagasikara)',
+  CountryIso2.MW: 'Malawi',
+  CountryIso2.MY: 'Malaysia (Malaysia)',
+  CountryIso2.MV: 'Maldives (Maldives)',
+  CountryIso2.ML: 'Mali (Mali)',
+  CountryIso2.MT: 'Malta',
+  CountryIso2.MH: 'Marshall Islands',
+  CountryIso2.MR: 'Mauritania (موريتانيا)',
+  CountryIso2.MU: 'Mauritius (Moris)',
+  CountryIso2.MX: 'Mexico (México)',
+  CountryIso2.FM: 'Micronesia',
+  CountryIso2.MD: 'Moldova (Republica Moldova)',
+  CountryIso2.MC: 'Monaco (Monaco)',
+  CountryIso2.MN: 'Mongolia (Монгол улс)',
+  CountryIso2.ME: 'Montenegro (Crna Gora)',
+  CountryIso2.MA: 'Morocco (المغرب)',
+  CountryIso2.MZ: 'Mozambique (Moçambique)',
+  CountryIso2.MM: 'Myanmar (Burma) (မြန်မာ)',
+  CountryIso2.NA: 'Namibia',
+  CountryIso2.NR: 'Nauru',
+  CountryIso2.NP: 'Nepal (नेपाल)',
+  CountryIso2.NL: 'Netherlands (Nederland)',
+  CountryIso2.NZ: 'New Zealand',
+  CountryIso2.NI: 'Nicaragua',
+  CountryIso2.NE: 'Niger (Niger)',
+  CountryIso2.NG: 'Nigeria (Nigeria)',
+  CountryIso2.MK: 'North Macedonia (Северна Македонија)',
+  CountryIso2.NO: 'Norway (Norge)',
+  CountryIso2.OM: 'Oman (عمان)',
+  CountryIso2.PK: 'Pakistan (پاکستان)',
+  CountryIso2.PW: 'Palau',
+  CountryIso2.PS: 'Palestine (فلسطين)',
+  CountryIso2.PA: 'Panama',
+  CountryIso2.PG: 'Papua New Guinea',
+  CountryIso2.PY: 'Paraguay',
+  CountryIso2.PE: 'Peru (Perú)',
+  CountryIso2.PH: 'Philippines (Pilipinas)',
+  CountryIso2.PL: 'Poland (Polska)',
+  CountryIso2.PT: 'Portugal (Portugal)',
+  CountryIso2.QA: 'Qatar (قطر)',
+  CountryIso2.RO: 'Romania (România)',
+  CountryIso2.RU: 'Russia (Россия)',
+  CountryIso2.RW: 'Rwanda',
+  CountryIso2.KN: 'Saint Kitts and Nevis',
+  CountryIso2.LC: 'Saint Lucia',
+  CountryIso2.VC: 'Saint Vincent and the Grenadines',
+  CountryIso2.WS: 'Samoa',
+  CountryIso2.SM: 'San Marino',
+  CountryIso2.ST: 'Sao Tome and Principe',
+  CountryIso2.SA: 'Saudi Arabia (السعودية)',
+  CountryIso2.SN: 'Senegal (Sénégal)',
+  CountryIso2.RS: 'Serbia (Србија)',
+  CountryIso2.SC: 'Seychelles',
+  CountryIso2.SL: 'Sierra Leone',
+  CountryIso2.SG: 'Singapore (Singapore)',
+  CountryIso2.SK: 'Slovakia (Slovensko)',
+  CountryIso2.SI: 'Slovenia (Slovenija)',
+  CountryIso2.SB: 'Solomon Islands',
+  CountryIso2.SO: 'Somalia (Soomaaliya)',
+  CountryIso2.ZA: 'South Africa (South Africa)',
+  CountryIso2.SS: 'South Sudan',
+  CountryIso2.ES: 'Spain (España)',
+  CountryIso2.LK: 'Sri Lanka (ශ්‍රී ලංකාව)',
+  CountryIso2.SD: 'Sudan (السودان)',
+  CountryIso2.SR: 'Suriname',
+  CountryIso2.SE: 'Sweden (Sverige)',
+  CountryIso2.CH: 'Switzerland (Schweiz)',
+  CountryIso2.SY: 'Syria (سوريا)',
+  CountryIso2.TW: 'Taiwan (台灣)',
+  CountryIso2.TJ: 'Tajikistan (Тоҷикистон)',
+  CountryIso2.TZ: 'Tanzania (Tanzania)',
+  CountryIso2.TH: 'Thailand (ประเทศไทย)',
+  CountryIso2.TL: 'Timor-Leste',
+  CountryIso2.TG: 'Togo',
+  CountryIso2.TO: 'Tonga',
+  CountryIso2.TT: 'Trinidad and Tobago',
+  CountryIso2.TN: 'Tunisia (تونس)',
+  CountryIso2.TR: 'Turkey (Türkiye)',
+  CountryIso2.TM: 'Turkmenistan (Türkmenistan)',
+  CountryIso2.TV: 'Tuvalu',
+  CountryIso2.UG: 'Uganda',
+  CountryIso2.UA: 'Ukraine (Україна)',
+  CountryIso2.AE: 'United Arab Emirates (الإمارات)',
+  CountryIso2.GB: 'United Kingdom',
+  CountryIso2.US: 'United States',
+  CountryIso2.UY: 'Uruguay',
+  CountryIso2.UZ: 'Uzbekistan (O‘zbekiston)',
+  CountryIso2.VU: 'Vanuatu',
+  CountryIso2.VA: 'Vatican City (Città del Vaticano)',
+  CountryIso2.VE: 'Venezuela',
+  CountryIso2.VN: 'Vietnam (Việt Nam)',
+  CountryIso2.YE: 'Yemen (اليمن)',
+  CountryIso2.ZM: 'Zambia',
+  CountryIso2.ZW: 'Zimbabwe',
+};
 

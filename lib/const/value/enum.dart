@@ -15,77 +15,205 @@ enum UserType {
   admin,
 }
 
-/// 서울특별시 자치구
-enum SeoulDistrict {
-  //all,
-  gangnam,       // 강남구
-  gangdong,      // 강동구
-  gangbuk,       // 강북구
-  gangseo,       // 강서구
-  gwanak,        // 관악구
-  gwangjin,      // 광진구
-  guro,          // 구로구
-  geumcheon,     // 금천구
-  nowon,         // 노원구
-  dobong,        // 도봉구
-  dongdaemun,    // 동대문구
-  dongjak,       // 동작구
-  mapo,          // 마포구
-  seodaemun,     // 서대문구
-  seocho,        // 서초구
-  seongdong,     // 성동구
-  seongbuk,      // 성북구
-  songpa,        // 송파구
-  yangcheon,     // 양천구
-  yeongdeungpo,  // 영등포구
-  yongsan,       // 용산구
-  eunpyeong,     // 은평구
-  jongno,        // 종로구
-  jung,          // 중구
-  jungnang,// 중랑구
-
-}
-
-/// 요일 (월~일)
-enum Weekday {
-  monday,
-  tuesday,
-  wednesday,
-  thursday,
-  friday,
-  saturday,
-  sunday,
-}
-
-///예약유형
-enum ReservationRuleType {
-  fixedDayEachMonth,    // 매달 특정일
-  daysBeforePlay,       // 플레이 날짜 기준 n일 전
-  nthWeekdayOfMonth,    // 매달 n번째 특정 요일
-  etc,                  // 기타
-}
-
-/// 게시판 상태 (양도/교환 + 진행/완료)
-enum TradeState {
-  exchangeOngoing,  // 교환 진행 중
-  transferOngoing,  // 양도 진행 중
-  done,     // 양도 완료
-  // 교환 완료
-}
-
-/// 라켓 브랜드
-enum RacketBrand {
-  wilson,
-  babolat,
-  head,
-  yonex,
-  prince,
-  tecnifibre,
-  dunlop,
-  volkl,
-  prokennex,
-  slazenger,
-  solinco,
-  pacific,
-  artengo,
+/// ISO2 국가 코드 전체 (영어/자국어 병기 라벨은 아래 extension 참조)
+enum CountryIso2 {
+  AF, // Afghanistan (افغانستان)
+  AL, // Albania (Shqipëria)
+  DZ, // Algeria (الجزائر)
+  AS, // American Samoa
+  AD, // Andorra
+  AO, // Angola
+  AG, // Antigua and Barbuda
+  AR, // Argentina
+  AM, // Armenia (Հայաստան)
+  AU, // Australia
+  AT, // Austria (Österreich)
+  AZ, // Azerbaijan (Azərbaycan)
+  BS, // Bahamas
+  BH, // Bahrain (البحرين)
+  BD, // Bangladesh (বাংলাদেশ)
+  BB, // Barbados
+  BY, // Belarus (Беларусь)
+  BE, // Belgium (België)
+  BZ, // Belize
+  BJ, // Benin (Bénin)
+  BM, // Bermuda
+  BT, // Bhutan (འབྲུག)
+  BO, // Bolivia
+  BA, // Bosnia and Herzegovina (Bosna i Hercegovina)
+  BW, // Botswana
+  BR, // Brazil (Brasil)
+  BN, // Brunei Darussalam
+  BG, // Bulgaria (България)
+  BF, // Burkina Faso
+  BI, // Burundi
+  KH, // Cambodia (កម្ពុជា)
+  CM, // Cameroon (Cameroun)
+  CA, // Canada
+  CV, // Cape Verde (Cabo Verde)
+  KY, // Cayman Islands
+  CF, // Central African Republic (République centrafricaine)
+  TD, // Chad (Tchad)
+  CL, // Chile
+  CN, // China (中国)
+  CO, // Colombia
+  KM, // Comoros (جزر القمر)
+  CG, // Congo
+  CD, // Congo, Democratic Republic of the
+  CR, // Costa Rica
+  CI, // Côte d'Ivoire
+  HR, // Croatia (Hrvatska)
+  CU, // Cuba
+  CY, // Cyprus (Κύπρος)
+  CZ, // Czech Republic (Česká republika)
+  DK, // Denmark (Danmark)
+  DJ, // Djibouti (جيبوتي)
+  DM, // Dominica
+  DO, // Dominican Republic (República Dominicana)
+  EC, // Ecuador
+  EG, // Egypt (مصر)
+  SV, // El Salvador
+  GQ, // Equatorial Guinea (Guinea Ecuatorial)
+  ER, // Eritrea (ኤርትራ)
+  EE, // Estonia (Eesti)
+  SZ, // Eswatini
+  ET, // Ethiopia (ኢትዮጵያ)
+  FJ, // Fiji
+  FI, // Finland (Suomi)
+  FR, // France
+  GA, // Gabon
+  GM, // Gambia
+  GE, // Georgia (საქართველო)
+  DE, // Germany (Deutschland)
+  GH, // Ghana
+  GR, // Greece (Ελλάδα)
+  GD, // Grenada
+  GT, // Guatemala
+  GN, // Guinea (Guinée)
+  GW, // Guinea-Bissau (Guiné-Bissau)
+  GY, // Guyana
+  HT, // Haiti (Haïti)
+  HN, // Honduras
+  HU, // Hungary (Magyarország)
+  IS, // Iceland (Ísland)
+  IN, // India (भारत)
+  ID, // Indonesia (Indonesia)
+  IR, // Iran (ایران)
+  IQ, // Iraq (العراق)
+  IE, // Ireland
+  IL, // Israel (ישראל)
+  IT, // Italy (Italia)
+  JM, // Jamaica
+  JP, // Japan (日本)
+  JO, // Jordan (الأردن)
+  KZ, // Kazakhstan (Қазақстан)
+  KE, // Kenya
+  KI, // Kiribati
+  KP, // Korea (North) (조선민주주의인민공화국)
+  KR, // Korea (South) (대한민국)
+  KW, // Kuwait (الكويت)
+  KG, // Kyrgyzstan (Кыргызстан)
+  LA, // Laos (ລາວ)
+  LV, // Latvia (Latvija)
+  LB, // Lebanon (لبنان)
+  LS, // Lesotho
+  LR, // Liberia
+  LY, // Libya (ليبيا)
+  LI, // Liechtenstein
+  LT, // Lithuania (Lietuva)
+  LU, // Luxembourg (Luxembourg)
+  MG, // Madagascar (Madagasikara)
+  MW, // Malawi
+  MY, // Malaysia (Malaysia)
+  MV, // Maldives (Maldives)
+  ML, // Mali (Mali)
+  MT, // Malta
+  MH, // Marshall Islands
+  MR, // Mauritania (موريتانيا)
+  MU, // Mauritius (Moris)
+  MX, // Mexico (México)
+  FM, // Micronesia
+  MD, // Moldova (Republica Moldova)
+  MC, // Monaco (Monaco)
+  MN, // Mongolia (Монгол улс)
+  ME, // Montenegro (Crna Gora)
+  MA, // Morocco (المغرب)
+  MZ, // Mozambique (Moçambique)
+  MM, // Myanmar (Burma) (မြန်မာ)
+  NA, // Namibia
+  NR, // Nauru
+  NP, // Nepal (नेपाल)
+  NL, // Netherlands (Nederland)
+  NZ, // New Zealand
+  NI, // Nicaragua
+  NE, // Niger (Niger)
+  NG, // Nigeria (Nigeria)
+  MK, // North Macedonia (Северна Македонија)
+  NO, // Norway (Norge)
+  OM, // Oman (عمان)
+  PK, // Pakistan (پاکستان)
+  PW, // Palau
+  PS, // Palestine (فلسطين)
+  PA, // Panama
+  PG, // Papua New Guinea
+  PY, // Paraguay
+  PE, // Peru (Perú)
+  PH, // Philippines (Pilipinas)
+  PL, // Poland (Polska)
+  PT, // Portugal (Portugal)
+  QA, // Qatar (قطر)
+  RO, // Romania (România)
+  RU, // Russia (Россия)
+  RW, // Rwanda
+  KN, // Saint Kitts and Nevis
+  LC, // Saint Lucia
+  VC, // Saint Vincent and the Grenadines
+  WS, // Samoa
+  SM, // San Marino
+  ST, // Sao Tome and Principe
+  SA, // Saudi Arabia (السعودية)
+  SN, // Senegal (Sénégal)
+  RS, // Serbia (Србија)
+  SC, // Seychelles
+  SL, // Sierra Leone
+  SG, // Singapore (Singapore)
+  SK, // Slovakia (Slovensko)
+  SI, // Slovenia (Slovenija)
+  SB, // Solomon Islands
+  SO, // Somalia (Soomaaliya)
+  ZA, // South Africa (South Africa)
+  SS, // South Sudan
+  ES, // Spain (España)
+  LK, // Sri Lanka (ශ්‍රී ලංකාව)
+  SD, // Sudan (السودان)
+  SR, // Suriname
+  SE, // Sweden (Sverige)
+  CH, // Switzerland (Schweiz)
+  SY, // Syria (سوريا)
+  TW, // Taiwan (台灣)
+  TJ, // Tajikistan (Тоҷикистон)
+  TZ, // Tanzania (Tanzania)
+  TH, // Thailand (ประเทศไทย)
+  TL, // Timor-Leste
+  TG, // Togo
+  TO, // Tonga
+  TT, // Trinidad and Tobago
+  TN, // Tunisia (تونس)
+  TR, // Turkey (Türkiye)
+  TM, // Turkmenistan (Türkmenistan)
+  TV, // Tuvalu
+  UG, // Uganda
+  UA, // Ukraine (Україна)
+  AE, // United Arab Emirates (الإمارات)
+  GB, // United Kingdom
+  US, // United States
+  UY, // Uruguay
+  UZ, // Uzbekistan (O‘zbekiston)
+  VU, // Vanuatu
+  VA, // Vatican City (Città del Vaticano)
+  VE, // Venezuela
+  VN, // Vietnam (Việt Nam)
+  YE, // Yemen (اليمن)
+  ZM, // Zambia
+  ZW, // Zimbabwe
 }
