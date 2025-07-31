@@ -16,7 +16,7 @@ enum UserType {
 }
 
 /// ISO2 국가 코드 전체 (영어/자국어 병기 라벨은 아래 extension 참조)
-enum CountryIso2 {
+enum Country {
   AF, // Afghanistan (افغانستان)
   AL, // Albania (Shqipëria)
   DZ, // Algeria (الجزائر)
