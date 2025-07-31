@@ -15,6 +15,50 @@ enum UserType {
   admin,
 }
 
+/// 취미 유형 (펜팔 매칭용)
+enum HobbyType {
+  Reading,
+  Traveling,
+  Cooking,
+  Hiking,
+  Gaming,
+  Photography,
+  Drawing,
+  Dancing,
+  Singing,
+  Writing,
+  Swimming,
+  Yoga,
+  Cycling,
+  Fishing,
+  Gardening,
+  Knitting,
+  Baking,
+  WatchingMovies,
+  PlayingMusic,
+  Meditation,
+  Calligraphy,
+  Blogging,
+  Crafting,
+  Painting,
+  Running,
+  Climbing,
+  BoardGames,
+  Anime,
+  Languages,
+  Birdwatching,
+  Coding,
+  Collecting,
+  Acting,
+  Archery,
+  Astronomy,
+  Volunteering,
+  Puppetry,
+  ScubaDiving,
+  Surfing,
+  Skateboarding,
+}
+
 /// ISO2 국가 코드 전체 (영어/자국어 병기 라벨은 아래 extension 참조)
 enum Country {
   AF, // Afghanistan (افغانستان)
@@ -217,3 +261,4 @@ enum Country {
   ZM, // Zambia
   ZW, // Zimbabwe
 }
+
