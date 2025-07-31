@@ -18,6 +18,7 @@ class ModelUser {
   final int? age;
   final String? mbti;
   final int? mannerScore;
+  final List<HobbyType>? hobbies;
 
   const ModelUser({
     required this.uid,
@@ -34,6 +35,7 @@ class ModelUser {
     this.age,
     this.mbti,
     this.mannerScore,
+    this.hobbies,
   });
 
   factory ModelUser.fromJson(Map<String, dynamic> json) {
@@ -54,6 +56,7 @@ class ModelUser {
       age: json[keyAge] as int?,
       mbti: json[keyMbti] as String?,
       mannerScore: json[keyMannerScore] as int?,
+      hobbies: (json[keyHobbies] as List<dynamic>?)?.map((e) => HobbyType.values.firstWhere((v) => v.name == e)).toList(),
     );
   }
 
@@ -73,6 +76,7 @@ class ModelUser {
       keyAge: age,
       keyMbti: mbti,
       keyMannerScore: mannerScore,
+      keyHobbies: hobbies?.map((e) => e.name).toList(),
     };
   }
 
@@ -91,6 +95,7 @@ class ModelUser {
     int? age,
     String? mbti,
     int? mannerScore,
+    List<HobbyType>? hobbies,
   }) {
     return ModelUser(
       uid: uid ?? this.uid,
@@ -107,6 +112,7 @@ class ModelUser {
       age: age ?? this.age,
       mbti: mbti ?? this.mbti,
       mannerScore: mannerScore ?? this.mannerScore,
+      hobbies: hobbies ?? this.hobbies,
     );
   }
 }
