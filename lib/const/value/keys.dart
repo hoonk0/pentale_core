@@ -17,3 +17,4 @@ const String keyAge = 'age';
 const String keyMbti = 'mbti';
 const String keyMannerScore = 'manner_score';
 const String keyHobbies = 'hobbies';
+const String keyLanguages = 'languages';

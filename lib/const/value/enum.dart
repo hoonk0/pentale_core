@@ -59,6 +59,40 @@ enum HobbyType {
   Skateboarding,
 }
 
+/// 사용 가능 언어
+enum LanguageType {
+  English,
+  Korean,
+  Spanish,
+  French,
+  German,
+  Chinese,
+  Japanese,
+  Russian,
+  Arabic,
+  Portuguese,
+  Hindi,
+  Italian,
+  Dutch,
+  Turkish,
+  Vietnamese,
+  Polish,
+  Thai,
+  Swedish,
+  Indonesian,
+  Greek,
+  Czech,
+  Hungarian,
+  Romanian,
+  Hebrew,
+  Malay,
+  Ukrainian,
+  Bengali,
+  Finnish,
+  Danish,
+  Norwegian,
+}
+
 /// ISO2 국가 코드 전체 (영어/자국어 병기 라벨은 아래 extension 참조)
 enum Country {
   AF, // Afghanistan (افغانستان)

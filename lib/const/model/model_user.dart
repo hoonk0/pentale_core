@@ -19,6 +19,7 @@ class ModelUser {
   final String? mbti;
   final int? mannerScore;
   final List<HobbyType>? hobbies;
+  final List<LanguageType>? languages;
 
   const ModelUser({
     required this.uid,
@@ -36,6 +37,7 @@ class ModelUser {
     this.mbti,
     this.mannerScore,
     this.hobbies,
+    this.languages,
   });
 
   factory ModelUser.fromJson(Map<String, dynamic> json) {
@@ -57,6 +59,7 @@ class ModelUser {
       mbti: json[keyMbti] as String?,
       mannerScore: json[keyMannerScore] as int?,
       hobbies: (json[keyHobbies] as List<dynamic>?)?.map((e) => HobbyType.values.firstWhere((v) => v.name == e)).toList(),
+      languages: (json[keyLanguages] as List<dynamic>?)?.map((e) => LanguageType.values.firstWhere((v) => v.name == e)).toList(),
     );
   }
 
@@ -77,6 +80,7 @@ class ModelUser {
       keyMbti: mbti,
       keyMannerScore: mannerScore,
       keyHobbies: hobbies?.map((e) => e.name).toList(),
+      keyLanguages: languages?.map((e) => e.name).toList(),
     };
   }
 
@@ -96,6 +100,7 @@ class ModelUser {
     String? mbti,
     int? mannerScore,
     List<HobbyType>? hobbies,
+    List<LanguageType>? languages,
   }) {
     return ModelUser(
       uid: uid ?? this.uid,
@@ -113,6 +118,7 @@ class ModelUser {
       mbti: mbti ?? this.mbti,
       mannerScore: mannerScore ?? this.mannerScore,
       hobbies: hobbies ?? this.hobbies,
+      languages: languages ?? this.languages,
     );
   }
 }
