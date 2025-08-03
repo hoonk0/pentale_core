@@ -18,3 +18,9 @@ const String keyMbti = 'mbti';
 const String keyMannerScore = 'manner_score';
 const String keyHobbies = 'hobbies';
 const String keyLanguages = 'languages';
+
+
+const keyContent = 'content';
+const keyHashtags = 'hashtags';
+const keyLikes = 'likes';
+const keyReplyCount = 'replyCount';
