@@ -8,6 +8,8 @@ const keyUid = "uid";
 const String keyUserType = 'user_type';
 const String keyAuthenticationWait = 'authentication_wait';
 const String keyNickName = 'nick_name';
+const String keyRecommendFriendUid = 'recommended_Friend_Uid';
+const String keyTodayFriendUid = 'today_friend_uid';
 
 const String keyImageUrl = 'image_url';
 const String keyGender = 'gender';

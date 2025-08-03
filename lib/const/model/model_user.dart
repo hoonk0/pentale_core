@@ -20,6 +20,8 @@ class ModelUser {
   final int? mannerScore;
   final List<HobbyType>? hobbies;
   final List<LanguageType>? languages;
+  final String? recommendedFriendUid;
+  final String? todayFriendUid;
 
   const ModelUser({
     required this.uid,
@@ -38,6 +40,8 @@ class ModelUser {
     this.mannerScore,
     this.hobbies,
     this.languages,
+    this.recommendedFriendUid,
+    this.todayFriendUid,
   });
 
   factory ModelUser.fromJson(Map<String, dynamic> json) {
@@ -60,6 +64,8 @@ class ModelUser {
       mannerScore: json[keyMannerScore] as int?,
       hobbies: (json[keyHobbies] as List<dynamic>?)?.map((e) => HobbyType.values.firstWhere((v) => v.name == e)).toList(),
       languages: (json[keyLanguages] as List<dynamic>?)?.map((e) => LanguageType.values.firstWhere((v) => v.name == e)).toList(),
+      recommendedFriendUid: json[keyRecommendFriendUid] as String?,
+      todayFriendUid: json[keyTodayFriendUid] as String?,
     );
   }
 
@@ -81,6 +87,8 @@ class ModelUser {
       keyMannerScore: mannerScore,
       keyHobbies: hobbies?.map((e) => e.name).toList(),
       keyLanguages: languages?.map((e) => e.name).toList(),
+      keyRecommendFriendUid: recommendedFriendUid,
+      keyTodayFriendUid: todayFriendUid,
     };
   }
 
@@ -101,6 +109,8 @@ class ModelUser {
     int? mannerScore,
     List<HobbyType>? hobbies,
     List<LanguageType>? languages,
+    String? recommendedFriendUid,
+    String? todayFriendUid,
   }) {
     return ModelUser(
       uid: uid ?? this.uid,
@@ -119,6 +129,8 @@ class ModelUser {
       mannerScore: mannerScore ?? this.mannerScore,
       hobbies: hobbies ?? this.hobbies,
       languages: languages ?? this.languages,
+      recommendedFriendUid: recommendedFriendUid ?? this.recommendedFriendUid,
+      todayFriendUid: todayFriendUid ?? this.todayFriendUid,
     );
   }
 }
