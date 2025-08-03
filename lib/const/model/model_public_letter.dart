@@ -5,7 +5,7 @@ import '../value/keys.dart';
 
 // updated class definition
 class ModelPublicLetter {
-  final String id;
+  final String publicLetterUid;
   final ModelUser user;
   final String content;
   final List<String>? hashtags;
@@ -14,7 +14,7 @@ class ModelPublicLetter {
   final DateTime dateCreated;
 
   ModelPublicLetter({
-    required this.id,
+    required this.publicLetterUid,
     required this.user,
     required this.content,
     this.hashtags,
@@ -23,9 +23,9 @@ class ModelPublicLetter {
     required this.dateCreated,
   });
 
-  factory ModelPublicLetter.fromJson(Map<String, dynamic> json, String id) {
+  factory ModelPublicLetter.fromJson(Map<String, dynamic> json, String publicLetterUid) {
     return ModelPublicLetter(
-      id: id,
+      publicLetterUid: publicLetterUid,
       user: ModelUser.fromJson(json[keyUser] ?? {}),
       content: json[keyContent] ?? '',
       hashtags: json[keyHashtags] != null ? List<String>.from(json[keyHashtags]) : null,
@@ -54,7 +54,7 @@ class ModelPublicLetter {
   }
 
   ModelPublicLetter copyWith({
-    String? id,
+    String? publicLetterUid,
     ModelUser? user,
     String? content,
     List<String>? hashtags,
@@ -63,7 +63,7 @@ class ModelPublicLetter {
     DateTime? dateCreated,
   }) {
     return ModelPublicLetter(
-      id: id ?? this.id,
+      publicLetterUid: publicLetterUid ?? this.publicLetterUid,
       user: user ?? this.user,
       content: content ?? this.content,
       hashtags: hashtags ?? this.hashtags,

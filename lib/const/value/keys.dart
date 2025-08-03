@@ -24,3 +24,4 @@ const keyContent = 'content';
 const keyHashtags = 'hashtags';
 const keyLikes = 'likes';
 const keyReplyCount = 'replyCount';
+const keyPublicLetterUid = 'public_letter_uid';
