@@ -19,7 +19,7 @@ const String keyMannerScore = 'manner_score';
 const String keyHobbies = 'hobbies';
 const String keyLanguages = 'languages';
 
-
+const keyPublicLetter = 'public_letter';
 const keyContent = 'content';
 const keyHashtags = 'hashtags';
 const keyLikes = 'likes';
